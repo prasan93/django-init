@@ -1,0 +1,16 @@
+services:
+  init-db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USERNAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_PORT=${DB_PORT}
+      - POSTGRES_HOST=${DB_HOST}
+    volumes:
+      - database-data:/var/lib/postgresql/data
+
+volumes:
+  database-data: null
+
+
